@@ -1,0 +1,56 @@
+Docker va a correr un contenedor a partir de una imagen.
+La imagen tiene un sistema operativo.
+un software (ej. apache, php)
+app (código de aplicación.
+
+¿Cómo generamos la imagen?
+usando docker file(archivo con istruccuines), docker buil, docker run.
+------------------------------------------------------------------------
+
+docker run postgres en consola para iniciar la version deseada
+docker run postgres:version para seleccionar una version que no sea la última, podremos trabajar
+con distintas versiones en proyectos distintos al mismo tiempo.
+
+Comandos más útilizados:
+docker run: ejecuta en un contenedor nuevo
+docker pull: descarga la imagen pero no la corre
+docker images: imagenes que estan corriendo
+docker ps: nos muestra los contenedores que están corriendo
+docker ps -a: muestra todos los contenedores que corrieron hace algún tiempo.
+docker start "idcontenedor": vuelve a hacer correr un contenedor cerrado.
+docker logs "idcontenedor": para ver los logs del contenedor
+docker exec : ejecuta un comando dentro de un contenedor que ya esta corriendo
+docker exec -it "idcontenedor" sh: i crea una seción interactiva y el t va a simular una terminal
+docker stop: va a detener el contenedor
+docker run -d nginx(ej): va a correr en background
+docker log -f "id contenedor" : va a mostrar la salida del contenedor
+
+--------------------------------------------------------------------------
+Para comenzar ej de la vida real
+vim Dockerfile, esto inicializa ejecutando un FROM.
+docker build -t nombre-imagen . --> con esto construimos una imagen
+docker run nombre-imagen --> comenzamos a correr la imagen
+docker run -dp 3000:3000 nombre-imagen --> para poder verlo en el navegador
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
